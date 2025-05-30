@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "name": "task_flutter",
     "short_name": "task_flutter",
+=======
+    "name": "task02_flutter",
+    "short_name": "task02_flutter",
+>>>>>>> 583b571 (task 02)
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # task_flutter
+=======
+# task02_flutter
+>>>>>>> 583b571 (task 02)
 
 A new Flutter project.
 

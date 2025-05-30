@@ -1,9 +1,14 @@
+<<<<<<< HEAD
+=======
+import 'dart:math';
+>>>>>>> 583b571 (task 02)
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(MyApp());
 }
 
+<<<<<<< HEAD
 class Flashcard {
   String question;
   String answer;
@@ -11,10 +16,13 @@ class Flashcard {
   Flashcard({required this.question, required this.answer});
 }
 
+=======
+>>>>>>> 583b571 (task 02)
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+<<<<<<< HEAD
 
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -23,10 +31,15 @@ class MyApp extends StatelessWidget {
         appBarTheme: AppBarTheme(color: Colors.cyan),
       ),
       home: FlashcardPage(),
+=======
+      debugShowCheckedModeBanner: false,
+      home: QuoteScreen(),
+>>>>>>> 583b571 (task 02)
     );
   }
 }
 
+<<<<<<< HEAD
 class FlashcardPage extends StatefulWidget {
   @override
   _FlashcardPageState createState() => _FlashcardPageState();
@@ -223,3 +236,79 @@ class _FlashcardPageState extends State<FlashcardPage> {
     );
   }
 }
+=======
+class QuoteScreen extends StatefulWidget {
+  @override
+  _QuoteScreenState createState() => _QuoteScreenState();
+}
+
+class _QuoteScreenState extends State<QuoteScreen> {
+  final List<Map<String, String>> quotes = [
+    {"quote": "Opportunities don't happen, you create them."
+  , "author": "Chris Grosser"},
+    {"quote": "- Don't watch the clock; do what it does. Keep going."
+    , "author": "Sam Levenson"},
+    {"quote": "- It always seems impossible until it's done." , "author": "Nelson Mandela"},
+    {"quote": "It always seems impossible until it’s done.", "author": "Nelson Mandela"},
+    {"quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.", "author": "Winston Churchill"},
+  ];
+
+  String currentQuote = "Click the button for a quote!";
+  String currentAuthor = "";
+
+  void generateQuote() {
+    final randomIndex = Random().nextInt(quotes.length);
+    setState(() {
+      currentQuote = quotes[randomIndex]["quote"]!;
+      currentAuthor = quotes[randomIndex]["author"]!;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text("Random Quote Generator",style: TextStyle(color: Colors.white)),
+        backgroundColor: Colors.blue,
+      ),
+      body: Center(
+
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                currentQuote,
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.lightBlue, fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 10),
+              Text(
+                "- $currentAuthor",
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.red,fontSize: 19, fontStyle: FontStyle.italic),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                  onPressed: generateQuote,
+                  child: Text("New Quote"),
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                    textStyle: TextStyle(fontSize: 18),
+                  ),
+                ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+>>>>>>> 583b571 (task 02)
