@@ -12,6 +12,8 @@ class Flashcard {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,12 +30,14 @@ class MyApp extends StatelessWidget {
 }
 
 class FlashcardPage extends StatefulWidget {
+  const FlashcardPage({super.key});
+
   @override
   _FlashcardPageState createState() => _FlashcardPageState();
 }
 
 class _FlashcardPageState extends State<FlashcardPage> {
-  List<Flashcard> _flashcards = [
+  final List<Flashcard> _flashcards = [
     Flashcard(question: "What is the capital of Japan?", answer: "Tokyo."),
     Flashcard(
       question: "- What is the largest planet in our solar system?",
@@ -63,8 +67,9 @@ class _FlashcardPageState extends State<FlashcardPage> {
   void _deleteFlashcard(int index) {
     setState(() {
       _flashcards.removeAt(index);
-      if (_currentIndex >= _flashcards.length)
+      if (_currentIndex >= _flashcards.length) {
         _currentIndex = _flashcards.length - 1;
+      }
     });
   }
 
